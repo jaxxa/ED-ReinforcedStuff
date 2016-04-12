@@ -25,8 +25,8 @@
 
 
   <ThingDef ParentName="ResourceBase">
-    <defName>Steel</defName>
-    <label>steel</label>
+    <defName>SteelReinforced</defName>
+    <label>reinforced steel</label>
     <description>An iron-carbon metal alloy used for building structures, tools, and weapons.</description>
     <graphicData>
       <texPath>Things/Item/Resource/Metal</texPath>
@@ -55,7 +55,7 @@
       <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
       <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
       <statFactors>
-        <MaxHitPoints>1</MaxHitPoints>
+        <MaxHitPoints>10</MaxHitPoints>
         <Beauty>1</Beauty>
         <Flammability>0.2</Flammability>
         <MeleeWeapon_Cooldown>1</MeleeWeapon_Cooldown>
@@ -65,8 +65,8 @@
   </ThingDef>
 
   <ThingDef ParentName="ResourceBase">
-    <defName>Plasteel</defName>
-    <label>plasteel</label>
+    <defName>PlasteelReinforced</defName>
+    <label>reinforced plasteel</label>
     <description>Advanced spacer tech structural material. Plasteel is extremely strong due to its unique molecular structure.</description>
     <graphicData>
       <texPath>Things/Item/Resource/Plasteel</texPath>
@@ -93,10 +93,10 @@
       <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
       <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
       <statFactors>
-        <MaxHitPoints>2.8</MaxHitPoints>
+        <MaxHitPoints>28.0</MaxHitPoints>
         <Beauty>1.2</Beauty>
         <Flammability>0.1</Flammability>
-        <WorkToMake>2.0</WorkToMake>
+        <WorkToMake>10.0</WorkToMake>
         <MeleeWeapon_Cooldown>0.8</MeleeWeapon_Cooldown>
       </statFactors>
       <smeltable>true</smeltable>
@@ -104,8 +104,8 @@
   </ThingDef>
 
   <ThingDef ParentName="ResourceVerbBase">
-    <defName>WoodLog</defName>
-    <label>wood</label>
+    <defName>WoodLogReinforced</defName>
+    <label>reinforced wood</label>
     <description>Wood from trees or other fibrous plants. Useful for building structures, weapons, and even simple prosthetics. A raw stick of wood can be used as a weapon in a pinch.</description>
     <graphicData>
       <texPath>Things/Item/Resource/WoodLog</texPath>
@@ -139,10 +139,10 @@
         <Beauty>2</Beauty>
       </statOffsets>
       <statFactors>
-        <MaxHitPoints>0.5</MaxHitPoints>
+        <MaxHitPoints>5.0</MaxHitPoints>
         <Beauty>1.25</Beauty>
         <Flammability>1</Flammability>
-        <WorkToMake>0.7</WorkToMake>
+        <WorkToMake>3.5</WorkToMake>
         <DoorOpenSpeed>1.2</DoorOpenSpeed>
         <MeleeWeapon_Cooldown>0.9</MeleeWeapon_Cooldown>
       </statFactors>

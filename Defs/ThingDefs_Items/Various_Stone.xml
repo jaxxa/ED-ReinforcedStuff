@@ -6,7 +6,7 @@
 
 
 
-  <ThingDef ParentName="ResourceBase" Name="StoneBlocksBase" Abstract="True">
+  <ThingDef ParentName="ResourceBase" Name="StoneBlocksBaseReinforced" Abstract="True">
     <description>Blocks of stone. Mostly useful for building long-lasting, simple structures.</description>
     <graphicData>
       <texPath>Things/Item/Resource/StoneBlocks</texPath>
@@ -35,9 +35,9 @@
       <statFactors>
         <Beauty>1.2</Beauty>
         <MarketValue>0.4</MarketValue>
-        <MaxHitPoints>2.4</MaxHitPoints>
+        <MaxHitPoints>24.0</MaxHitPoints>
         <Flammability>0</Flammability>
-        <WorkToMake>4.5</WorkToMake>
+        <WorkToMake>22.5</WorkToMake>
         <DoorOpenSpeed>0.45</DoorOpenSpeed>
         <BedRestEffectiveness>0.9</BedRestEffectiveness>
         <MeleeWeapon_Cooldown>1.35</MeleeWeapon_Cooldown>
@@ -47,28 +47,10 @@
 
   <!-- =========== Stone solids, chunks, and blocks =========== -->
 
-  
-  
-  
-  <ThingDef ParentName="UglyRockBase">
-    <defName>Sandstone</defName>
-    <label>sandstone</label>
-    <description>A sedimentary rock composed of sand particles compressed together.</description>
-    <graphicData>
-      <color>(126,104,94)</color>
-    </graphicData>
-    <statBases>
-      <MaxHitPoints>400</MaxHitPoints>
-    </statBases>
-    <building>
-      <mineableThing>ChunkSandstone</mineableThing>
-      <mineableDropChance>0.25</mineableDropChance>
-    </building>
-  </ThingDef>
-  
-  <ThingDef ParentName="StoneBlocksBase">
-    <defName>BlocksSandstone</defName>
-    <label>sandstone blocks</label>
+   
+  <ThingDef ParentName="StoneBlocksBaseReinforced">
+    <defName>BlocksSandstoneReinforced</defName>
+    <label>reinforced sandstone blocks</label>
     <description>Blocks of solid sandstone. Sandstone is a relatively soft rock and chips easily.</description>
     <graphicData>
       <color>(126,104,94)</color>
@@ -86,33 +68,15 @@
       <statFactors>
         <Beauty>1.1</Beauty>  
         <MarketValue>0.4</MarketValue>
-        <MaxHitPoints>1.4</MaxHitPoints>
+        <MaxHitPoints>14.0</MaxHitPoints>
       </statFactors>
     </stuffProps>
   </ThingDef>
 
 
-
-
-  <ThingDef ParentName="UglyRockBase">
-    <defName>Granite</defName>
-    <label>granite</label>
-    <description>A very hard igneous rock.</description>
-    <graphicData>
-      <color>(105,95,97)</color>
-    </graphicData>
-    <statBases>
-      <MaxHitPoints>900</MaxHitPoints>
-    </statBases>
-    <building>
-      <mineableThing>ChunkGranite</mineableThing>
-      <mineableDropChance>0.25</mineableDropChance>
-    </building>
-  </ThingDef>
-
-  <ThingDef ParentName="StoneBlocksBase">
-    <defName>BlocksGranite</defName>
-    <label>granite blocks</label>
+  <ThingDef ParentName="StoneBlocksBaseReinforced">
+    <defName>BlocksGraniteReinforced</defName>
+    <label>reinforced granite blocks</label>
     <description>Blocks of solid granite. Granite is a very hard stone.</description>
     <graphicData>
       <color>(105,95,97)</color>
@@ -129,35 +93,15 @@
       <stuffAdjective>granite</stuffAdjective>
       <statFactors>
         <MarketValue>0.5</MarketValue>
-        <MaxHitPoints>1.7</MaxHitPoints>
+        <MaxHitPoints>17.0</MaxHitPoints>
       </statFactors>
     </stuffProps>
   </ThingDef>
 
 
-
-
-
-
-  <ThingDef ParentName="UglyRockBase">
-    <defName>Limestone</defName>
-    <label>limestone</label>
-    <description>A sedimentary rock formed from the compacted remains of ancient seashells.</description>
-    <graphicData>
-      <color>(158,153,135)</color>
-    </graphicData>
-    <statBases>
-      <MaxHitPoints>700</MaxHitPoints>
-    </statBases>
-    <building>
-      <mineableThing>ChunkLimestone</mineableThing>
-      <mineableDropChance>0.25</mineableDropChance>
-    </building>
-  </ThingDef>
-
-  <ThingDef ParentName="StoneBlocksBase">
-    <defName>BlocksLimestone</defName>
-    <label>limestone blocks</label>
+  <ThingDef ParentName="StoneBlocksBaseReinforced">
+    <defName>BlocksLimestoneReinforced</defName>
+    <label>reinforced limestone blocks</label>
     <description>Blocks of solid limestone.</description>
     <graphicData>
       <color>(158,153,135)</color>
@@ -173,33 +117,15 @@
       <stuffAdjective>limestone</stuffAdjective>
       <statFactors>
         <MarketValue>0.4</MarketValue>
-        <MaxHitPoints>1.55</MaxHitPoints>
+        <MaxHitPoints>15.5</MaxHitPoints>
       </statFactors>
     </stuffProps>
   </ThingDef>
 
 
-
-
-  <ThingDef ParentName="UglyRockBase">
-    <defName>Slate</defName>
-    <label>slate</label>
-    <description>A dark-colored metamorphic rock. Its fine layers are emblematic of slaty cleavage.</description>
-    <graphicData>
-      <color>(70,70,70)</color>
-    </graphicData>
-    <statBases>
-      <MaxHitPoints>500</MaxHitPoints>
-    </statBases>
-    <building>
-      <mineableThing>ChunkSlate</mineableThing>
-      <mineableDropChance>0.25</mineableDropChance>
-    </building>
-  </ThingDef>
-
-  <ThingDef ParentName="StoneBlocksBase">
-    <defName>BlocksSlate</defName>
-    <label>slate blocks</label>
+  <ThingDef ParentName="StoneBlocksBaseReinforced">
+    <defName>BlocksSlateReinforced</defName>
+    <label>reinforced slate blocks</label>
     <description>Blocks of solid slate. A dull-looking rock that chips easily.</description>
     <graphicData>
       <color>(70,70,70)</color>
@@ -216,34 +142,14 @@
       <statFactors>
         <Beauty>1.1</Beauty>
         <MarketValue>0.38</MarketValue>
-        <MaxHitPoints>1.3</MaxHitPoints>
+        <MaxHitPoints>13.0</MaxHitPoints>
       </statFactors>
     </stuffProps>
   </ThingDef>
 
-
-
-
-  <ThingDef ParentName="UglyRockBase">
-    <defName>Marble</defName>
-    <label>marble</label>
-    <description>A soft metamorphic rock.</description>
-    <graphicData>
-      <color>(132,135,132)</color>
-    </graphicData>
-    <statBases>
-      <MaxHitPoints>450</MaxHitPoints>
-      <Beauty>-1</Beauty>
-    </statBases>
-    <building>
-      <mineableThing>ChunkMarble</mineableThing>
-      <mineableDropChance>0.25</mineableDropChance>
-    </building>
-  </ThingDef>
-
-  <ThingDef ParentName="StoneBlocksBase">
-    <defName>BlocksMarble</defName>
-    <label>marble blocks</label>
+  <ThingDef ParentName="StoneBlocksBaseReinforced">
+    <defName>BlocksMarbleReinforced</defName>
+    <label>reinforced marble blocks</label>
     <description>Blocks of solid marble. Marble is a soft, beautiful stone, known for being easy to sculpt.</description>
     <graphicData>
       <color>(132,135,132)</color>
@@ -260,7 +166,7 @@
       <statFactors>
         <Beauty>1.35</Beauty>
         <MarketValue>0.45</MarketValue>
-        <MaxHitPoints>1.2</MaxHitPoints>
+        <MaxHitPoints>12.0</MaxHitPoints>
       </statFactors>
     </stuffProps>
   </ThingDef>
