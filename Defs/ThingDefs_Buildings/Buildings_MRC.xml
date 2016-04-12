@@ -16,7 +16,7 @@
     <defName>MolecularReinforcmentCompressor</defName>
     <label>Molecular Reinforcment Compressor</label>
     <description>Produces Reinforced Stuff.</description>
-    <thingClass>Building_NutrientPasteDispenser</thingClass>
+    <thingClass>ED_ReinforcedStuff.Building_MolecularReinforcmentCompressor</thingClass>
     <graphicData>
       <texPath>MolecularReinforcmentCompressor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -61,6 +61,7 @@
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <designationCategory>Production</designationCategory>
     <constructEffect>ConstructMetal</constructEffect>
+    <tickerType>Rare</tickerType>
   </ThingDef>
 
 </Things>
