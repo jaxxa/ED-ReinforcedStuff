@@ -18,9 +18,9 @@
     <description>Produces Reinforced Stuff.</description>
     <thingClass>Building_NutrientPasteDispenser</thingClass>
     <graphicData>
-      <texPath>Things/Building/Production/NutrientDispenser</texPath>
+      <texPath>MolecularReinforcmentCompressor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(3,4)</drawSize>
+      <drawSize>(3,2</drawSize>
       <damageData>
         <rect>(0.02,0.25,2.96,2.85)</rect>
         <cornerTL>Damage/Corner</cornerTL>
@@ -50,13 +50,13 @@
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
     </comps>
-    <size>(3,4)</size>
+    <size>(3,2)</size>
     <costList>
       <Steel>90</Steel>
       <Components>3</Components>
     </costList>
     <socialPropernessMatters>true</socialPropernessMatters>
-    <interactionCellOffset>(0,0,3)</interactionCellOffset>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <designationCategory>Production</designationCategory>
