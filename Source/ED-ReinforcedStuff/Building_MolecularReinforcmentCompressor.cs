@@ -29,16 +29,16 @@ namespace ED_ReinforcedStuff
 
             //Thing _NewResource = ThingMaker.MakeThing(ThingDef.Named("PlasteelReinforced"));
             Thing _OldResourceThing = this.GetValidThingStack();
+            if (_OldResourceThing == null) { return; }
 
             ThingDef _NewResourceDef = this.GetReinforcedVersion(_OldResourceThing);
+            if (_NewResourceDef == null) { return; }
 
-            if (_NewResourceDef != null)
-            {
-                _OldResourceThing.SplitOff(10);
+            _OldResourceThing.SplitOff(10);
 
-                Thing _NewResource = ThingMaker.MakeThing(_NewResourceDef);
-                GenPlace.TryPlaceThing(_NewResource, this.InteractionCell, ThingPlaceMode.Near);
-            }
+            Thing _NewResource = ThingMaker.MakeThing(_NewResourceDef);
+            GenPlace.TryPlaceThing(_NewResource, this.InteractionCell, ThingPlaceMode.Near);
+
         }
 
         private Thing GetValidThingStack()
@@ -54,7 +54,7 @@ namespace ED_ReinforcedStuff
 
             foreach (Thing _TempThing in _closeThings)
             {
-                if (_TempThing.stackCount > Building_MolecularReinforcmentCompressor.STUFF_AMMOUNT_REQUIRED)
+                if (_TempThing.stackCount >= Building_MolecularReinforcmentCompressor.STUFF_AMMOUNT_REQUIRED)
                 {
                     ThingDef _ReinforcedVersion = this.GetReinforcedVersion(_TempThing);
 
