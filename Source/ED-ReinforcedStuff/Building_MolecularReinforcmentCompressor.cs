@@ -13,15 +13,26 @@ namespace ED_ReinforcedStuff
     public class Building_MolecularReinforcmentCompressor : Building
     {
         const int STUFF_AMMOUNT_REQUIRED = 10;
+        
+        CompPowerTrader m_Power;
+
+        public override void SpawnSetup()
+        {
+            base.SpawnSetup();
+
+            this.m_Power = base.GetComp<CompPowerTrader>();
+        }
 
         public override void TickRare()
         {
-            Log.Message("TickRare");
+           // Log.Message("TickRare");
 
             base.TickRare();
 
-            this.TrySpawnReinforcedStuff();
-
+            if (this.m_Power.PowerOn)
+            {
+                this.TrySpawnReinforcedStuff();
+            }
         }
 
         private void TrySpawnReinforcedStuff()
@@ -71,7 +82,7 @@ namespace ED_ReinforcedStuff
 
         ThingDef GetReinforcedVersion(Thing sourceStuff)
         {
-            Log.Message("GetReinforcedVersion checking: " + sourceStuff.def.defName + " - " + sourceStuff.Stuff);
+            //Log.Message("GetReinforcedVersion checking: " + sourceStuff.def.defName + " - " + sourceStuff.Stuff);
 
             //SteelReinforced
             if (sourceStuff.def == ThingDefOf.Steel)
@@ -116,7 +127,7 @@ namespace ED_ReinforcedStuff
             }
 
             //BlocksMarbleReinforced
-            if (sourceStuff.def == ThingDef.Named("BlocksMarble1"))
+            if (sourceStuff.def == ThingDef.Named("BlocksMarble"))
             {
                 return ThingDef.Named("BlocksMarbleReinforced");
             }
