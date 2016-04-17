@@ -3,7 +3,12 @@
 	<name>ED-ReinforcedStuff</name>
 	<author>Jaxxa</author>
 	<url>https://ludeon.com/forums/index.php?topic=15606.0</url>
+<<<<<<< HEAD
 	<description>Adds a Reinforced version of some Stuff. This allows for stronger constructions. Reinforced stuff has 10x the hitpoints but at 5x build time. Reinforced Stuff is made from 10 Normal Stuff in a Molecular Reinforcement Compressor. Currently Reinforced Stuff can be made from Steel, Plasteel, Wood and Stone. 
 	
 	While this does not Require the ED-AutoLoader mod, I find it helpful and looks better than the Molecular Reinforcement Compressor taking the resources from the ground.</description>
 </ModMetaData>
+=======
+	<description>Adds a Reinforced version of some Stuff. This allows for stronger constructions. Aproximatly 10x strengeth, 5x build time. Reinforced Stuff takes 10 of the non Resources Stuff to make in a Molecular Reinforcment Compressor. Currently Reinforced Stuff can be made from Steel, Plasteel, Wood and Stone.</description>
+</ModMetaData>
+>>>>>>> refs/remotes/origin/OtherStuff

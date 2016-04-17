@@ -13,15 +13,26 @@ namespace ED_ReinforcedStuff
     public class Building_MolecularReinforcmentCompressor : Building
     {
         const int STUFF_AMMOUNT_REQUIRED = 10;
+        
+        CompPowerTrader m_Power;
+
+        public override void SpawnSetup()
+        {
+            base.SpawnSetup();
+
+            this.m_Power = base.GetComp<CompPowerTrader>();
+        }
 
         public override void TickRare()
         {
-            Log.Message("TickRare");
+           // Log.Message("TickRare");
 
             base.TickRare();
 
-            this.TrySpawnReinforcedStuff();
-
+            if (this.m_Power.PowerOn)
+            {
+                this.TrySpawnReinforcedStuff();
+            }
         }
 
         private void TrySpawnReinforcedStuff()
@@ -71,11 +82,56 @@ namespace ED_ReinforcedStuff
 
         ThingDef GetReinforcedVersion(Thing sourceStuff)
         {
-            Log.Message("GetReinforcedVersion checking: " + sourceStuff.def.defName);
+            //Log.Message("GetReinforcedVersion checking: " + sourceStuff.def.defName + " - " + sourceStuff.Stuff);
+
+            //SteelReinforced
+            if (sourceStuff.def == ThingDefOf.Steel)
+            {
+                return ThingDef.Named("SteelReinforced");
+            }
+
+            //PlasteelReinforced
+            if (sourceStuff.def == ThingDefOf.Plasteel)
+            {
+                return ThingDef.Named("PlasteelReinforced");
+            }
+
+            //WoodLogReinforced
             if (sourceStuff.def == ThingDefOf.WoodLog)
             {
                 return ThingDef.Named("WoodLogReinforced");
             }
+
+            //BlocksSandstoneReinforced
+            if (sourceStuff.def == ThingDef.Named("BlocksSandstone"))
+            {
+                return ThingDef.Named("BlocksSandstoneReinforced");
+            }
+
+            //BlocksGraniteReinforced
+            if (sourceStuff.def == ThingDef.Named("BlocksGranite"))
+            {
+                return ThingDef.Named("BlocksGraniteReinforced");
+            }
+
+            //BlocksLimestoneReinforced
+            if (sourceStuff.def == ThingDef.Named("BlocksLimestone"))
+            {
+                return ThingDef.Named("BlocksLimestoneReinforced");
+            }
+
+            //BlocksSlateReinforced
+            if (sourceStuff.def == ThingDef.Named("BlocksSlate"))
+            {
+                return ThingDef.Named("BlocksSlateReinforced");
+            }
+
+            //BlocksMarbleReinforced
+            if (sourceStuff.def == ThingDef.Named("BlocksMarble"))
+            {
+                return ThingDef.Named("BlocksMarbleReinforced");
+            }
+
             return null;
         }
 
