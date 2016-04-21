@@ -20,7 +20,7 @@
     <graphicData>
       <texPath>MolecularReinforcementCompressor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(3,2</drawSize>
+      <drawSize>(3,2)</drawSize>
       <damageData>
         <rect>(0.02,0.25,2.96,2.85)</rect>
         <cornerTL>Damage/Corner</cornerTL>
