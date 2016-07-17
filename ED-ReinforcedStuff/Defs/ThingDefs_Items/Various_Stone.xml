@@ -15,6 +15,7 @@
     <soundInteract>Stone_Drop</soundInteract>
     <soundDrop>Stone_Drop</soundDrop>
     <useHitPoints>false</useHitPoints>
+	<Tradeability>Never</Tradeability>
     <statBases>
       <MarketValue>1.9</MarketValue>
       <SharpDamageMultiplier>0.6</SharpDamageMultiplier>

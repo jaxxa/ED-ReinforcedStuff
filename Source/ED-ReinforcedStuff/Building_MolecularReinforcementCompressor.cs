@@ -78,8 +78,7 @@ namespace ED_ReinforcedStuff
 
             return null;
         }
-
-
+        
         ThingDef GetReinforcedVersion(Thing sourceStuff)
         {
             //Log.Message("GetReinforcedVersion checking: " + sourceStuff.def.defName + " - " + sourceStuff.Stuff);

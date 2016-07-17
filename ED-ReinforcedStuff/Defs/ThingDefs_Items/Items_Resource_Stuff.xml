@@ -12,6 +12,7 @@
     <selectable>true</selectable>
     <altitudeLayer>Item</altitudeLayer>
     <stackLimit>75</stackLimit>
+	<Tradeability>Never</Tradeability>
     <comps>
       <li Class="CompProperties_Forbiddable"/>
     </comps>
