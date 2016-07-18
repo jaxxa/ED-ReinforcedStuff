@@ -8,7 +8,7 @@ using UnityEngine;
 using RimWorld;
 using Verse;
 
-namespace ED_ReinforcedStuff
+namespace EnhancedDevelopment.ReinforcedStuff
 {
     public class Building_MolecularReinforcementCompressor : Building
     {

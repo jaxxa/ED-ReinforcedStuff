@@ -16,7 +16,7 @@
     <defName>MolecularReinforcementCompressor</defName>
     <label>Molecular Reinforcement Compressor</label>
     <description>Produces Reinforced Stuff.</description>
-    <thingClass>ED_ReinforcedStuff.Building_MolecularReinforcementCompressor</thingClass>
+    <thingClass>EnhancedDevelopment.ReinforcedStuff.Building_MolecularReinforcementCompressor</thingClass>
     <graphicData>
       <texPath>MolecularReinforcementCompressor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
