@@ -16,9 +16,9 @@ namespace EnhancedDevelopment.ReinforcedStuff
         
         CompPowerTrader m_Power;
 
-        public override void SpawnSetup()
+        public override void SpawnSetup(Map map)
         {
-            base.SpawnSetup();
+            base.SpawnSetup(map);
 
             this.m_Power = base.GetComp<CompPowerTrader>();
         }
@@ -48,19 +48,19 @@ namespace EnhancedDevelopment.ReinforcedStuff
             _OldResourceThing.SplitOff(10);
 
             Thing _NewResource = ThingMaker.MakeThing(_NewResourceDef);
-            GenPlace.TryPlaceThing(_NewResource, this.InteractionCell, ThingPlaceMode.Near);
+            GenPlace.TryPlaceThing(_NewResource, this.InteractionCell, this.Map, ThingPlaceMode.Near);
 
         }
 
         private Thing GetValidThingStack()
         {
-            List<IntVec3> _Cells = Enumerable.ToList<IntVec3>(Enumerable.Where<IntVec3>(GenAdj.CellsAdjacentCardinal((Thing)this), (Func<IntVec3, bool>)(c => GenGrid.InBounds(c))));
+            List<IntVec3> _Cells = Enumerable.ToList<IntVec3>(Enumerable.Where<IntVec3>(GenAdj.CellsAdjacentCardinal((Thing)this), (Func<IntVec3, bool>)(c => GenGrid.InBounds(c,this.Map))));
 
             List<Thing> _closeThings = new List<Thing>();
 
             foreach (IntVec3 _Cell in _Cells)
             {
-                _closeThings.AddRange(GridsUtility.GetThingList(_Cell));
+                _closeThings.AddRange(GridsUtility.GetThingList(_Cell, this.Map));
             }
 
             foreach (Thing _TempThing in _closeThings)
