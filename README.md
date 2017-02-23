@@ -4,13 +4,15 @@
 
 1.Standard updating
 
-Copy Defs
+2.Copy Defs
 
-Change:	
+3.Change:	
 <Tradeability>Never</Tradeability>
 MaxHitPoints x10
 WorkToBuild x10
-	
+WorkToMake x10
+
+Name: JadeReinforced
 
 #Change Log
 

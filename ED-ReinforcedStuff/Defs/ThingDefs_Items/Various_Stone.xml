@@ -1,176 +1,195 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+	<!-- =========== Bases =========== -->
 
-  <!-- =========== bases =========== -->
+	<ThingDef ParentName="ResourceBase" Name="StoneBlocksBase" Abstract="True">
+		<description>Blocks of stone. Mostly useful for building long-lasting, simple structures.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/StoneBlocks</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Stone_Drop</soundInteract>
+		<soundDrop>Stone_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<MarketValue>1.9</MarketValue>
+			<SharpDamageMultiplier>0.6</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1.0</BluntDamageMultiplier>
+			<Beauty>-12</Beauty>
+		</statBases>
+		<thingCategories>
+			<li>StoneBlocks</li>
+		</thingCategories>
+		<stuffProps>
+			<categories>
+				<li>Stony</li>
+			</categories>
+			<commonality>0.20</commonality>
+			<!-- because there are so many stone types -->
+			<appearance>Bricks</appearance>
+			<statOffsets>
+				<WorkToBuild>1400</WorkToBuild>
+				<Beauty>2</Beauty>
+			</statOffsets>
+			<statFactors>
+				<Beauty>1.2</Beauty>
+				<MarketValue>0.4</MarketValue>
+				<MaxHitPoints>24</MaxHitPoints>
+				<Flammability>0</Flammability>
+				<WorkToBuild>60</WorkToBuild>
+				<WorkToMake>13</WorkToMake>
+				<DoorOpenSpeed>0.45</DoorOpenSpeed>
+				<BedRestEffectiveness>0.9</BedRestEffectiveness>
+				<MeleeWeapon_Cooldown>1.35</MeleeWeapon_Cooldown>
+			</statFactors>
+		</stuffProps>
+	</ThingDef>
 
+	<ThingDef Name="UglyRockBase" ParentName="RockBase" Abstract="True" >
+		<statBases>
+			<Flammability>0</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+	</ThingDef>
 
+	<!-- ================ Sandstone ================ -->
 
-  <ThingDef ParentName="ResourceBase" Name="StoneBlocksBaseReinforced" Abstract="True">
-    <description>Blocks of stone. Mostly useful for building long-lasting, simple structures.</description>
-    <graphicData>
-      <texPath>Things/Item/Resource/StoneBlocks</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Stone_Drop</soundInteract>
-    <soundDrop>Stone_Drop</soundDrop>
-    <useHitPoints>false</useHitPoints>
-	<Tradeability>Never</Tradeability>
-    <statBases>
-      <MarketValue>1.9</MarketValue>
-      <SharpDamageMultiplier>0.6</SharpDamageMultiplier>
-      <BluntDamageMultiplier>1.0</BluntDamageMultiplier>
-    </statBases>
-    <thingCategories>
-      <li>StoneBlocks</li>
-    </thingCategories>
-    <stuffProps>
-      <categories>
-        <li>Stony</li>
-      </categories>
-      <appearance>Bricks</appearance>
-      <statOffsets>
-        <WorkToMake>140</WorkToMake>
-        <Beauty>2</Beauty>
-      </statOffsets>
-      <statFactors>
-        <Beauty>1.2</Beauty>
-        <MarketValue>0.4</MarketValue>
-        <MaxHitPoints>24.0</MaxHitPoints>
-        <Flammability>0</Flammability>
-        <WorkToMake>22.5</WorkToMake>
-        <DoorOpenSpeed>0.45</DoorOpenSpeed>
-        <BedRestEffectiveness>0.9</BedRestEffectiveness>
-        <MeleeWeapon_Cooldown>1.35</MeleeWeapon_Cooldown>
-      </statFactors>
-    </stuffProps>
-  </ThingDef>
+	<ThingDef ParentName="StoneBlocksBase">
+		<defName>BlocksSandstoneReinforced</defName>
+		<label>Reinforced sandstone blocks</label>
+		<description>Blocks of solid sandstone. Sandstone is a relatively soft rock and chips easily.</description>
+		<graphicData>
+			<color>(126,104,94)</color>
+		</graphicData>
+		<statBases>
+			<MarketValue>1.9</MarketValue>
+			<Mass>1</Mass>
+			<SharpDamageMultiplier>0.5</SharpDamageMultiplier>
+		</statBases>
+		<stuffProps>
+			<color>(126,104,94)</color>
+			<soundImpactStuff>BulletImpactGround</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+			<stuffAdjective>sandstone</stuffAdjective>
+			<statFactors>
+				<Beauty>1.1</Beauty>  
+				<MarketValue>0.4</MarketValue>
+				<MaxHitPoints>14</MaxHitPoints>
+				<WorkToBuild>50</WorkToBuild>
+				<WorkToMake>11</WorkToMake>
+			</statFactors>
+		</stuffProps>
+	</ThingDef>
 
-  <!-- =========== Stone solids, chunks, and blocks =========== -->
+	<!-- ================ Granite ================ -->
 
-   
-  <ThingDef ParentName="StoneBlocksBaseReinforced">
-    <defName>BlocksSandstoneReinforced</defName>
-    <label>reinforced sandstone blocks</label>
-    <description>Blocks of solid sandstone. Sandstone is a relatively soft rock and chips easily.</description>
-    <graphicData>
-      <color>(126,104,94)</color>
-    </graphicData>
-    <statBases>
-      <MarketValue>1.9</MarketValue>
-      <SharpDamageMultiplier>0.5</SharpDamageMultiplier>
-    </statBases>
-    <stuffProps>
-      <color>(126,104,94)</color>
-      <soundImpactStuff>BulletImpactGround</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
-      <stuffAdjective>sandstone</stuffAdjective>
-      <statFactors>
-        <Beauty>1.1</Beauty>  
-        <MarketValue>0.4</MarketValue>
-        <MaxHitPoints>14.0</MaxHitPoints>
-      </statFactors>
-    </stuffProps>
-  </ThingDef>
+	<ThingDef ParentName="StoneBlocksBase">
+		<defName>BlocksGraniteReinforced</defName>
+		<label>Reinforced granite blocks</label>
+		<description>Blocks of solid granite. Granite is a very hard stone.</description>
+		<graphicData>
+			<color>(105,95,97)</color>
+		</graphicData>
+		<statBases>
+			<MarketValue>2.1</MarketValue>
+			<Mass>1.25</Mass>
+			<SharpDamageMultiplier>0.65</SharpDamageMultiplier>
+		</statBases>
+		<stuffProps>
+			<color>(105,95,97)</color>
+			<soundImpactStuff>BulletImpactGround</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+			<stuffAdjective>granite</stuffAdjective>
+			<statFactors>
+				<MarketValue>0.5</MarketValue>
+				<MaxHitPoints>17</MaxHitPoints>
+			</statFactors>
+		</stuffProps>
+	</ThingDef>
 
+	<!-- ================ Limestone ================ -->
 
-  <ThingDef ParentName="StoneBlocksBaseReinforced">
-    <defName>BlocksGraniteReinforced</defName>
-    <label>reinforced granite blocks</label>
-    <description>Blocks of solid granite. Granite is a very hard stone.</description>
-    <graphicData>
-      <color>(105,95,97)</color>
-    </graphicData>
-    <statBases>
-      <MarketValue>2.1</MarketValue>
-      <SharpDamageMultiplier>0.65</SharpDamageMultiplier>
-    </statBases>
-    <stuffProps>
-      <color>(105,95,97)</color>
-      <soundImpactStuff>BulletImpactGround</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
-      <stuffAdjective>granite</stuffAdjective>
-      <statFactors>
-        <MarketValue>0.5</MarketValue>
-        <MaxHitPoints>17.0</MaxHitPoints>
-      </statFactors>
-    </stuffProps>
-  </ThingDef>
+	<ThingDef ParentName="StoneBlocksBase">
+		<defName>BlocksLimestoneReinforced</defName>
+		<label>Reinforced limestone blocks</label>
+		<description>Blocks of solid limestone.</description>
+		<graphicData>
+			<color>(158,153,135)</color>
+		</graphicData>
+		<statBases>
+			<MarketValue>1.9</MarketValue>
+			<Mass>1.1</Mass>
+		</statBases>
+		<stuffProps>
+			<color>(158,153,135)</color>
+			<soundImpactStuff>BulletImpactGround</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+			<stuffAdjective>limestone</stuffAdjective>
+			<statFactors>
+				<MarketValue>0.4</MarketValue>
+				<MaxHitPoints>155</MaxHitPoints>
+			</statFactors>
+		</stuffProps>
+	</ThingDef>
 
+	<!-- ================ Slate ================ -->
 
-  <ThingDef ParentName="StoneBlocksBaseReinforced">
-    <defName>BlocksLimestoneReinforced</defName>
-    <label>reinforced limestone blocks</label>
-    <description>Blocks of solid limestone.</description>
-    <graphicData>
-      <color>(158,153,135)</color>
-    </graphicData>
-    <statBases>
-      <MarketValue>1.9</MarketValue>
-    </statBases>
-    <stuffProps>
-      <color>(158,153,135)</color>
-      <soundImpactStuff>BulletImpactGround</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
-      <stuffAdjective>limestone</stuffAdjective>
-      <statFactors>
-        <MarketValue>0.4</MarketValue>
-        <MaxHitPoints>15.5</MaxHitPoints>
-      </statFactors>
-    </stuffProps>
-  </ThingDef>
+	<ThingDef ParentName="StoneBlocksBase">
+		<defName>BlocksSlateReinforced</defName>
+		<label>Reinforced slate blocks</label>
+		<description>Blocks of solid slate. A dull-looking rock that chips easily.</description>
+		<graphicData>
+			<color>(70,70,70)</color>
+		</graphicData>
+		<statBases>
+			<MarketValue>1.9</MarketValue>
+			<Mass>0.9</Mass>
+		</statBases>
+		<stuffProps>
+			<color>(70,70,70)</color>
+			<soundImpactStuff>BulletImpactGround</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+			<stuffAdjective>slate</stuffAdjective>
+			<statFactors>
+				<Beauty>1.1</Beauty>
+				<MarketValue>0.38</MarketValue>
+				<MaxHitPoints>13</MaxHitPoints>
+			</statFactors>
+		</stuffProps>
+	</ThingDef>
 
+	<!-- ================ Marble ================ -->
 
-  <ThingDef ParentName="StoneBlocksBaseReinforced">
-    <defName>BlocksSlateReinforced</defName>
-    <label>reinforced slate blocks</label>
-    <description>Blocks of solid slate. A dull-looking rock that chips easily.</description>
-    <graphicData>
-      <color>(70,70,70)</color>
-    </graphicData>
-    <statBases>
-      <MarketValue>1.9</MarketValue>
-    </statBases>
-    <stuffProps>
-      <color>(70,70,70)</color>
-      <soundImpactStuff>BulletImpactGround</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
-      <stuffAdjective>slate</stuffAdjective>
-      <statFactors>
-        <Beauty>1.1</Beauty>
-        <MarketValue>0.38</MarketValue>
-        <MaxHitPoints>13.0</MaxHitPoints>
-      </statFactors>
-    </stuffProps>
-  </ThingDef>
-
-  <ThingDef ParentName="StoneBlocksBaseReinforced">
-    <defName>BlocksMarbleReinforced</defName>
-    <label>reinforced marble blocks</label>
-    <description>Blocks of solid marble. Marble is a soft, beautiful stone, known for being easy to sculpt.</description>
-    <graphicData>
-      <color>(132,135,132)</color>
-    </graphicData>
-    <statBases>
-      <MarketValue>1.9</MarketValue>
-    </statBases>
-    <stuffProps>
-      <color>(132,135,132)</color>
-      <soundImpactStuff>BulletImpactGround</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
-      <stuffAdjective>marble</stuffAdjective>
-      <statFactors>
-        <Beauty>1.35</Beauty>
-        <MarketValue>0.45</MarketValue>
-        <MaxHitPoints>12.0</MaxHitPoints>
-      </statFactors>
-    </stuffProps>
-  </ThingDef>
-
+	<ThingDef ParentName="StoneBlocksBase">
+		<defName>BlocksMarbleReinforced</defName>
+		<label>Reinforced marble blocks</label>
+		<description>Blocks of solid marble. Marble is a soft, beautiful stone, known for being easy to sculpt.</description>
+		<graphicData>
+			<color>(132,135,132)</color>
+		</graphicData>
+		<statBases>
+			<MarketValue>1.9</MarketValue>
+			<Mass>1.25</Mass>
+		</statBases>
+		<stuffProps>
+			<color>(132,135,132)</color>
+			<soundImpactStuff>BulletImpactGround</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+			<stuffAdjective>marble</stuffAdjective>
+			<statFactors>
+				<Beauty>1.35</Beauty>
+				<MarketValue>0.45</MarketValue>
+				<MaxHitPoints>12</MaxHitPoints>
+				<WorkToBuild>55</WorkToBuild>
+				<WorkToMake>115</WorkToMake>
+			</statFactors>
+		</stuffProps>
+	</ThingDef>
 
 </Defs>

@@ -13,7 +13,7 @@ namespace EnhancedDevelopment.ReinforcedStuff
     public class Building_MolecularReinforcementCompressor : Building
     {
         const int STUFF_AMMOUNT_REQUIRED = 10;
-        
+
         CompPowerTrader m_Power;
 
         public override void SpawnSetup(Map map)
@@ -25,7 +25,7 @@ namespace EnhancedDevelopment.ReinforcedStuff
 
         public override void TickRare()
         {
-           // Log.Message("TickRare");
+            // Log.Message("TickRare");
 
             base.TickRare();
 
@@ -54,7 +54,7 @@ namespace EnhancedDevelopment.ReinforcedStuff
 
         private Thing GetValidThingStack()
         {
-            List<IntVec3> _Cells = Enumerable.ToList<IntVec3>(Enumerable.Where<IntVec3>(GenAdj.CellsAdjacentCardinal((Thing)this), (Func<IntVec3, bool>)(c => GenGrid.InBounds(c,this.Map))));
+            List<IntVec3> _Cells = Enumerable.ToList<IntVec3>(Enumerable.Where<IntVec3>(GenAdj.CellsAdjacentCardinal((Thing)this), (Func<IntVec3, bool>)(c => GenGrid.InBounds(c, this.Map))));
 
             List<Thing> _closeThings = new List<Thing>();
 
@@ -78,10 +78,27 @@ namespace EnhancedDevelopment.ReinforcedStuff
 
             return null;
         }
-        
+
         ThingDef GetReinforcedVersion(Thing sourceStuff)
         {
             //Log.Message("GetReinforcedVersion checking: " + sourceStuff.def.defName + " - " + sourceStuff.Stuff);
+
+            //This will mostly work but will throw exceptions when trying to reinforce stuff that does not have a reinforced version.
+            //return ThingDef.Named(sourceStuff.def.defName + "Reinforced");
+
+
+            //SilverReinforced
+            if (sourceStuff.def == ThingDefOf.Silver)
+            {
+                return ThingDef.Named("SilverReinforced");
+            }
+            
+            //GoldReinforced
+            if (sourceStuff.def == ThingDefOf.Gold)
+            {
+                return ThingDef.Named("GoldReinforced");
+            }
+
 
             //SteelReinforced
             if (sourceStuff.def == ThingDefOf.Steel)
@@ -101,6 +118,16 @@ namespace EnhancedDevelopment.ReinforcedStuff
                 return ThingDef.Named("WoodLogReinforced");
             }
 
+            //uraniumReinforced
+            if (sourceStuff.def == ThingDef.Named("Uranium"))
+            {
+                return ThingDef.Named("UraniumReinforced");
+            }
+            //JadeReinforced
+            if (sourceStuff.def == ThingDef.Named("Jade"))
+            {
+                return ThingDef.Named("JadeReinforced");
+            }
             //BlocksSandstoneReinforced
             if (sourceStuff.def == ThingDef.Named("BlocksSandstone"))
             {
@@ -136,41 +163,3 @@ namespace EnhancedDevelopment.ReinforcedStuff
 
     }
 }
-
-
-
-//private List<Thing> FindValidStuffNearBuilding(Thing centerBuilding, int radius)
-//{
-
-//    //IEnumerable<Thing> _closeThings = GenRadial.RadialDistinctThingsAround(centerBuilding.Position, radius, true);
-
-//    List<Thing> _closeThings = new List<Thing>();
-
-//    List<IntVec3> _Cells = Enumerable.ToList<IntVec3>(Enumerable.Where<IntVec3>(GenAdj.CellsAdjacentCardinal((Thing)this), (Func<IntVec3, bool>)(c => GenGrid.InBounds(c))));
-
-//    foreach (IntVec3 _Cell in _Cells)
-//    {
-//        _closeThings.AddRange(GridsUtility.GetThingList(_Cell));
-//    }
-
-//    List<Thing> _ValidCloseThings = new List<Thing>();
-
-//    foreach (Thing _TempThing in _closeThings)
-//    {
-//        if (_TempThing.stackCount > Building_MolecularReinforcmentCompressor.STUFF_AMMOUNT_REQUIRED)
-//        {
-//            ThingDef _ReinforcedVersion = this.GetReinforcedVersion(_TempThing);
-
-//            if (_ReinforcedVersion != null)
-//            {
-//                _ValidCloseThings.Add(_TempThing);
-//                _TempThing.stackCount -= Building_MolecularReinforcmentCompressor.STUFF_AMMOUNT_REQUIRED;
-//            }
-//        }
-//        //if (tempThing.def.category == ThingCategory.Item)
-//        //{
-//        //    validCloseThings.Add(tempThing);
-//        //}
-//    }
-//    return _ValidCloseThings;
-//}
