@@ -17,10 +17,13 @@ Name: JadeReinforced
 #Change Log
 
 01.00.00
-*Initial Release
+* Initial Release
 
 02.00.00
-*Alpha 14 Update
+* Alpha 14 Update
 
 03.00.00
-*Update to Alpha 16
+* Update to Alpha 16
+
+0.17.0
+* Update to Alpha 17

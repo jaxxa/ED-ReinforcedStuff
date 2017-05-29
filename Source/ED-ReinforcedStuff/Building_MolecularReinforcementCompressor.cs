@@ -16,9 +16,9 @@ namespace EnhancedDevelopment.ReinforcedStuff
 
         CompPowerTrader m_Power;
 
-        public override void SpawnSetup(Map map)
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
-            base.SpawnSetup(map);
+            base.SpawnSetup(map, respawningAfterLoad);
 
             this.m_Power = base.GetComp<CompPowerTrader>();
         }
