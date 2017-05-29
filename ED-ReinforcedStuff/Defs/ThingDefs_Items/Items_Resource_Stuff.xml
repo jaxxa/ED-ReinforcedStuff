@@ -1,377 +1,372 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!--================== Bases ==================-->
-  
-  <ThingDef Name="ResourceBase" Abstract="True">
-    <thingClass>ThingWithComps</thingClass>
-    <label>unspecified resource</label>
-    <category>Item</category>
-    <resourceReadoutPriority>Middle</resourceReadoutPriority>
-    <useHitPoints>true</useHitPoints>
-    <selectable>true</selectable>
-    <altitudeLayer>Item</altitudeLayer>
-    <stackLimit>75</stackLimit>
-	<Tradeability>Never</Tradeability>
-    <comps>
-      <li Class="CompProperties_Forbiddable"/>
-    </comps>
-    <alwaysHaulable>true</alwaysHaulable>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <rotatable>false</rotatable>
-    <pathCost>15</pathCost>
-  </ThingDef>
-  
-  
-  
-  <!--=============== Pure stuffs: Basics ====================-->
+	<!--================== Bases ==================-->
+
+	<ThingDef Name="ResourceBase" Abstract="True">
+		<thingClass>ThingWithComps</thingClass>
+		<label>unspecified resource</label>
+		<category>Item</category>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<useHitPoints>true</useHitPoints>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<stackLimit>75</stackLimit>
+		<Tradeability>Never</Tradeability>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<rotatable>false</rotatable>
+		<pathCost>15</pathCost>
+	</ThingDef>
 
 
-  <ThingDef ParentName="ResourceBase">
-    <defName>SilverReinforced</defName>
-    <label>Reinforced silver</label>
-    <description>This metal is mostly used as a commodity currency. It can also be used for making attractive decorations.</description>
-    <graphicData>
-      <texPath>Things/Item/Resource/Silver</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <resourceReadoutPriority>First</resourceReadoutPriority>
-    <soundInteract>Silver_Drop</soundInteract>
-    <soundDrop>Silver_Drop</soundDrop>
-    <useHitPoints>false</useHitPoints>
-    <resourceReadoutAlwaysShow>true</resourceReadoutAlwaysShow>
-    <statBases>
-      <MarketValue>1</MarketValue>
-      <Mass>0.01</Mass>
-      <SharpDamageMultiplier>0.5</SharpDamageMultiplier>
-      <BluntDamageMultiplier>1.1</BluntDamageMultiplier>
-    </statBases>
-    <thingCategories>
-      <li>ResourcesRaw</li>
-    </thingCategories>
-    <stackLimit>500</stackLimit>
-    <smallVolume>true</smallVolume>
-    <deepCommonality>1</deepCommonality>
-    <stuffProps>
-      <categories>
-        <li>Metallic</li>
-      </categories>
-      <color>(180,173,150)</color>
-      <commonality>0.05</commonality>
-      <constructEffect>ConstructMetal</constructEffect>
-      <soundImpactStuff>BulletImpactMetal</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
-      <statOffsets>
-        <Beauty>6</Beauty>
-      </statOffsets>
-      <statFactors>
-        <MaxHitPoints>7</MaxHitPoints>
-        <Flammability>0.2</Flammability>
-        <Beauty>3</Beauty>
-        <MeleeWeapon_Cooldown>1</MeleeWeapon_Cooldown>
-        <WorkToMake>9</WorkToMake>
-        <WorkToBuild>9</WorkToBuild>
-      </statFactors>
-      <smeltable>true</smeltable>
-    </stuffProps>
-  </ThingDef>
+
+	<!--=============== Pure stuffs: Basics ====================-->
 
 
-  <ThingDef ParentName="ResourceBase">
-    <defName>GoldReinforced</defName>
-    <label>Reinforced gold</label>
-    <description>The most seductive metal of them all. Millions have died in attempting to feed the endless human thirst for gold. This soft metal is little use on its own, but is strikingly beautiful and very rare.</description>
-    <graphicData>
-      <texPath>Things/Item/Resource/Gold</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Silver_Drop</soundInteract>
-    <soundDrop>Silver_Drop</soundDrop>
-    <useHitPoints>false</useHitPoints>
-    <statBases>
-      <MarketValue>10</MarketValue>
-      <Mass>0.05</Mass>
-      <SharpDamageMultiplier>0.3</SharpDamageMultiplier>
-      <BluntDamageMultiplier>1.15</BluntDamageMultiplier>
-    </statBases>
-    <thingCategories>
-      <li>ResourcesRaw</li>
-    </thingCategories>
-    <stackLimit>500</stackLimit>
-    <smallVolume>true</smallVolume>
-    <deepCommonality>0.5</deepCommonality>
-    <stuffProps>
-      <stuffAdjective>golden</stuffAdjective>
-      <categories>
-        <li>Metallic</li>
-      </categories>
-      <commonality>0.02</commonality>
-      <color>(255,235,122)</color>
-      <constructEffect>ConstructMetal</constructEffect>
-      <soundImpactStuff>BulletImpactMetal</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
-      <statOffsets>
-        <Beauty>18</Beauty>
-      </statOffsets>
-      <statFactors>
-        <MaxHitPoints>6</MaxHitPoints>
-        <Flammability>0.2</Flammability>
-        <Beauty>6</Beauty>
-        <WorkToMake>9</WorkToMake>
-        <WorkToBuild>9</WorkToBuild>
-        <MeleeWeapon_Cooldown>1.1</MeleeWeapon_Cooldown>
-      </statFactors>
-      <smeltable>true</smeltable>
-    </stuffProps>
-  </ThingDef>
+	<ThingDef ParentName="ResourceBase">
+		<defName>SilverReinforced</defName>
+		<label>Reinforced silver</label>
+		<description>This metal is mostly used as a commodity currency. It can also be used for making attractive decorations.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Silver</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>First</resourceReadoutPriority>
+		<soundInteract>Silver_Drop</soundInteract>
+		<soundDrop>Silver_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<resourceReadoutAlwaysShow>true</resourceReadoutAlwaysShow>
+		<statBases>
+			<MarketValue>1</MarketValue>
+			<Mass>0.007</Mass>
+			<SharpDamageMultiplier>0.5</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1.1</BluntDamageMultiplier>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<stackLimit>500</stackLimit>
+		<smallVolume>true</smallVolume>
+		<deepCommonality>1</deepCommonality>
+		<stuffProps>
+			<categories>
+				<li>Metallic</li>
+			</categories>
+			<color>(180,173,150)</color>
+			<commonality>0.05</commonality>
+			<constructEffect>ConstructMetal</constructEffect>
+			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+			<statOffsets>
+				<Beauty>6</Beauty>
+			</statOffsets>
+			<statFactors>
+				<MaxHitPoints>7</MaxHitPoints>
+				<Flammability>0.2</Flammability>
+				<Beauty>2</Beauty>
+				<MeleeWeapon_Cooldown>1</MeleeWeapon_Cooldown>
+				<WorkToMake>9</WorkToMake>
+				<WorkToBuild>9</WorkToBuild>
+			</statFactors>
+			<smeltable>true</smeltable>
+		</stuffProps>
+	</ThingDef>
 
-  <ThingDef ParentName="ResourceBase">
-    <defName>SteelReinforced</defName>
-    <label>Reinforced steel</label>
-    <description>An iron-carbon metal alloy used for building structures, tools, and weapons.</description>
-    <graphicData>
-      <texPath>Things/Item/Resource/Metal</texPath>
-      <graphicClass>Graphic_Random</graphicClass>
-      <color>(255,255,255)</color>
-    </graphicData>
-    <soundInteract>Metal_Drop</soundInteract>
-    <soundDrop>Metal_Drop</soundDrop>
-    <statBases>
-      <MarketValue>2.0</MarketValue>
-      <Mass>0.5</Mass>
-      <SharpDamageMultiplier>1</SharpDamageMultiplier>
-      <BluntDamageMultiplier>1</BluntDamageMultiplier>
-    </statBases>
-    <useHitPoints>false</useHitPoints>
-    <slagDef>ChunkSlagSteel</slagDef>
-    <thingCategories>
-      <li>ResourcesRaw</li>
-    </thingCategories>
-    <deepCommonality>4</deepCommonality>
-    <stuffProps>
-      <categories>
-        <li>Metallic</li>
-      </categories>
-      <commonality>1.00</commonality>
-      <constructEffect>ConstructMetal</constructEffect>
-      <color>(102,102,105)</color>
-      <soundImpactStuff>BulletImpactMetal</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
-      <statFactors>
-        <MaxHitPoints>10</MaxHitPoints>
-        <Beauty>1</Beauty>
-        <Flammability>0.2</Flammability>
-        <MeleeWeapon_Cooldown>1</MeleeWeapon_Cooldown>
-      </statFactors>
-      <smeltable>true</smeltable>
-    </stuffProps>
-  </ThingDef>
 
-  <ThingDef ParentName="ResourceBase">
-    <defName>PlasteelReinforced</defName>
-    <label>Reinforced plasteel</label>
-    <description>Advanced spacer tech structural material. Plasteel is extremely strong due to its unique molecular structure.</description>
-    <graphicData>
-      <texPath>Things/Item/Resource/Plasteel</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Metal_Drop</soundInteract>
-    <soundDrop>Metal_Drop</soundDrop>
-    <useHitPoints>false</useHitPoints>
-    <statBases>
-      <MarketValue>14</MarketValue>
-      <Mass>0.5</Mass>
-      <SharpDamageMultiplier>1.2</SharpDamageMultiplier>
-      <BluntDamageMultiplier>1.0</BluntDamageMultiplier>
-    </statBases>
-    <thingCategories>
-      <li>ResourcesRaw</li>
-    </thingCategories>
-    <deepCommonality>1</deepCommonality>
-    <stuffProps>
-      <categories>
-        <li>Metallic</li>
-      </categories>
-      <commonality>0.25</commonality>
-      <constructEffect>ConstructMetal</constructEffect>
-      <color>(160,178,181)</color>
-      <soundImpactStuff>BulletImpactMetal</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
-      <statFactors>
-        <MaxHitPoints>28</MaxHitPoints>
-        <Beauty>1.2</Beauty>
-        <Flammability>0.1</Flammability>
-        <WorkToMake>22</WorkToMake>
+	<ThingDef ParentName="ResourceBase">
+		<defName>GoldReinforced</defName>
+		<label>Reinforced gold</label>
+		<description>The most seductive metal of them all. Millions have died in attempting to feed the endless human thirst for gold. This soft metal is little use on its own, but is strikingly beautiful and very rare.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Gold</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Silver_Drop</soundInteract>
+		<soundDrop>Silver_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<MarketValue>10</MarketValue>
+			<Mass>0.07</Mass>
+			<SharpDamageMultiplier>0.3</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1.15</BluntDamageMultiplier>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<stackLimit>500</stackLimit>
+		<smallVolume>true</smallVolume>
+		<deepCommonality>0.5</deepCommonality>
+		<stuffProps>
+			<stuffAdjective>golden</stuffAdjective>
+			<categories>
+				<li>Metallic</li>
+			</categories>
+			<commonality>0.02</commonality>
+			<color>(255,235,122)</color>
+			<constructEffect>ConstructMetal</constructEffect>
+			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+			<statOffsets>
+				<Beauty>12</Beauty>
+			</statOffsets>
+			<statFactors>
+				<MaxHitPoints>6</MaxHitPoints>
+				<Flammability>0.2</Flammability>
+				<Beauty>4</Beauty>
+				<WorkToMake>9</WorkToMake>
+				<WorkToBuild>9</WorkToBuild>
+				<MeleeWeapon_Cooldown>1.1</MeleeWeapon_Cooldown>
+			</statFactors>
+			<smeltable>true</smeltable>
+		</stuffProps>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>SteelReinforced</defName>
+		<label>Reinforced steel</label>
+		<description>An iron-carbon metal alloy used for building structures, tools, and weapons.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Metal</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<color>(255,255,255)</color>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<statBases>
+			<MarketValue>1.9</MarketValue>
+			<Mass>0.5</Mass>
+			<SharpDamageMultiplier>1</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1</BluntDamageMultiplier>
+		</statBases>
+		<useHitPoints>false</useHitPoints>
+		<slagDef>ChunkSlagSteel</slagDef>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<deepCommonality>4</deepCommonality>
+		<stuffProps>
+			<categories>
+				<li>Metallic</li>
+			</categories>
+			<commonality>1.00</commonality>
+			<constructEffect>ConstructMetal</constructEffect>
+			<color>(102,102,105)</color>
+			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+			<statFactors>
+				<MaxHitPoints>10</MaxHitPoints>
+				<Beauty>1</Beauty>
+				<Flammability>0.2</Flammability>
+				<MeleeWeapon_Cooldown>1</MeleeWeapon_Cooldown>
+			</statFactors>
+			<smeltable>true</smeltable>
+		</stuffProps>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>PlasteelReinforced</defName>
+		<label>Reinforced plasteel</label>
+		<description>Advanced spacer tech structural material. Plasteel is extremely strong due to its unique molecular structure.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Plasteel</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<MarketValue>14</MarketValue>
+			<Mass>0.5</Mass>
+			<SharpDamageMultiplier>1.2</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1.0</BluntDamageMultiplier>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<deepCommonality>1</deepCommonality>
+		<stuffProps>
+			<categories>
+				<li>Metallic</li>
+			</categories>
+			<commonality>0.20</commonality>
+			<constructEffect>ConstructMetal</constructEffect>
+			<color>(160,178,181)</color>
+			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+			<statFactors>
+				<MaxHitPoints>28</MaxHitPoints>
+				<Beauty>1</Beauty>
+				<Flammability>0.1</Flammability>
+				<WorkToMake>22</WorkToMake>
 				<WorkToBuild>22</WorkToBuild>
-        <MeleeWeapon_Cooldown>0.8</MeleeWeapon_Cooldown>
-      </statFactors>
-      <smeltable>true</smeltable>
-    </stuffProps>
-  </ThingDef>
+				<MeleeWeapon_Cooldown>0.8</MeleeWeapon_Cooldown>
+			</statFactors>
+			<smeltable>true</smeltable>
+		</stuffProps>
+	</ThingDef>
 
 
 
-  <ThingDef ParentName="ResourceVerbBase">
-    <defName>WoodLogReinforced</defName>
-    <label>Reinforced wood</label>
-    <description>Wood from trees or other fibrous plants. Useful for building structures, weapons, and even simple prosthetics. A raw stick of wood can be used as a weapon in a pinch.</description>
-    <graphicData>
-      <texPath>Things/Item/Resource/WoodLog</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <equippedAngleOffset>-20</equippedAngleOffset>
-    <soundInteract>Wood_Drop</soundInteract>
-    <soundDrop>Wood_Drop</soundDrop>
-    <statBases>
-      <MarketValue>1.4</MarketValue>
-      <MaxHitPoints>1500</MaxHitPoints>
-      <Mass>0.4</Mass>
-      <Flammability>1.0</Flammability>
-      <DeteriorationRate>2</DeteriorationRate>
-      <MeleeWeapon_DamageAmount>8</MeleeWeapon_DamageAmount>
-      <MeleeWeapon_Cooldown>2.2</MeleeWeapon_Cooldown>
-      <SharpDamageMultiplier>0.3</SharpDamageMultiplier>
-      <BluntDamageMultiplier>0.8</BluntDamageMultiplier>
-    </statBases>
-    <stuffProps>
-      <stuffAdjective>wooden</stuffAdjective>
-      <categories>
-        <li>Woody</li>
-      </categories>
-      <commonality>1.00</commonality>
-      <color>(133,97,67)</color>
-      <constructEffect>ConstructWood</constructEffect>
-      <appearance>Planks</appearance>
-      <soundImpactStuff>BulletImpactWood</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
-      <statOffsets>
-        <Beauty>2</Beauty>
-      </statOffsets>
-      <statFactors>
-        <MaxHitPoints>4</MaxHitPoints>
-        <Beauty>1.25</Beauty>
-        <Flammability>1</Flammability>
-        <WorkToMake>7</WorkToMake>
+	<ThingDef ParentName="ResourceVerbBase">
+		<defName>WoodLogReinforced</defName>
+		<label>Reinforced wood</label>
+		<description>Wood from trees or other fibrous plants. Useful for building structures, weapons, and even simple prosthetics. A raw stick of wood can be used as a weapon in a pinch.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/WoodLog</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<equippedAngleOffset>-20</equippedAngleOffset>
+		<soundInteract>Wood_Drop</soundInteract>
+		<soundDrop>Wood_Drop</soundDrop>
+		<statBases>
+			<MarketValue>1.4</MarketValue>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<Mass>0.4</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>1</DeteriorationRate>
+			<MeleeWeapon_DamageAmount>8</MeleeWeapon_DamageAmount>
+			<MeleeWeapon_Cooldown>2.2</MeleeWeapon_Cooldown>
+			<SharpDamageMultiplier>0.3</SharpDamageMultiplier>
+			<BluntDamageMultiplier>0.8</BluntDamageMultiplier>
+		</statBases>
+		<stuffProps>
+			<stuffAdjective>wooden</stuffAdjective>
+			<categories>
+				<li>Woody</li>
+			</categories>
+			<commonality>1.00</commonality>
+			<color>(133,97,67)</color>
+			<constructEffect>ConstructWood</constructEffect>
+			<appearance>Planks</appearance>
+			<soundImpactStuff>BulletImpactWood</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
+			<statFactors>
+				<MaxHitPoints>4</MaxHitPoints>
+				<Beauty>1</Beauty>
+				<Flammability>1</Flammability>
+				<WorkToMake>7</WorkToMake>
 				<WorkToBuild>7</WorkToBuild>
-        <DoorOpenSpeed>1.2</DoorOpenSpeed>
-        <MeleeWeapon_Cooldown>0.9</MeleeWeapon_Cooldown>
-      </statFactors>
-    </stuffProps>
-    <isBodyPartOrImplant>true</isBodyPartOrImplant>
-    <thingCategories>
-      <li>ResourcesRaw</li>
-    </thingCategories>
-    <techHediffsTags>
-      <li>Poor</li>
-    </techHediffsTags>
-    <verbs>
-      <li>
-        <verbClass>Verb_MeleeAttack</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <meleeDamageDef>Blunt</meleeDamageDef>
-      </li>
-    </verbs>
-  </ThingDef>
+				<DoorOpenSpeed>1.2</DoorOpenSpeed>
+				<MeleeWeapon_Cooldown>0.9</MeleeWeapon_Cooldown>
+			</statFactors>
+		</stuffProps>
+		<isBodyPartOrImplant>true</isBodyPartOrImplant>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<techHediffsTags>
+			<li>Poor</li>
+		</techHediffsTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_MeleeAttack</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<meleeDamageDef>Blunt</meleeDamageDef>
+			</li>
+		</verbs>
+	</ThingDef>
 
 
-  <ThingDef ParentName="ResourceBase">
-    <defName>UraniumReinforced</defName>
-    <label>Reinforced uranium</label>
-    <description>An extremely hard, dense metal. While it is best known for its use powering nuclear reactors, its physical properties also make it excellent in some roles as a tool, weapon, or armor.</description>
-    <graphicData>
-      <texPath>Things/Item/Resource/Uranium</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
+	<ThingDef ParentName="ResourceBase">
+		<defName>UraniumReinforced</defName>
+		<label>Reinforced uranium</label>
+		<description>An extremely hard, dense metal. While it is best known for its use powering nuclear reactors, its physical properties also make it excellent in some roles as a tool, weapon, or armor.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Uranium</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
 		<useHitPoints>false</useHitPoints>
-    <soundInteract>Metal_Drop</soundInteract>
-    <soundDrop>Metal_Drop</soundDrop>
-    <statBases>
-      <MarketValue>6</MarketValue>
-      <Mass>0.1</Mass>
-      <SharpDamageMultiplier>1.1</SharpDamageMultiplier>
-      <BluntDamageMultiplier>1.4</BluntDamageMultiplier>
-    </statBases>
-    <thingCategories>
-      <li>ResourcesRaw</li>
-    </thingCategories>
-    <stackLimit>500</stackLimit>
-    <smallVolume>true</smallVolume>
-    <deepCommonality>0.5</deepCommonality>
-    <stuffProps>
-      <categories>
-        <li>Metallic</li>
-      </categories>
-      <commonality>0.05</commonality>
-      <color>(100,100,100)</color>
-      <constructEffect>ConstructMetal</constructEffect>
-      <soundImpactStuff>BulletImpactMetal</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
-      <statFactors>
-        <MaxHitPoints>25</MaxHitPoints>
-        <WorkToMake>19</WorkToMake>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<statBases>
+			<MarketValue>6</MarketValue>
+			<Mass>0.1</Mass>
+			<SharpDamageMultiplier>1.1</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1.4</BluntDamageMultiplier>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<stackLimit>500</stackLimit>
+		<smallVolume>true</smallVolume>
+		<deepCommonality>0.5</deepCommonality>
+		<stuffProps>
+			<categories>
+				<li>Metallic</li>
+			</categories>
+			<commonality>0.05</commonality>
+			<color>(100,100,100)</color>
+			<constructEffect>ConstructMetal</constructEffect>
+			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+			<statFactors>
+				<MaxHitPoints>25</MaxHitPoints>
+				<WorkToMake>19</WorkToMake>
 				<WorkToBuild>19</WorkToBuild>
-				<Beauty>0.4</Beauty>
-        <Flammability>0.0</Flammability>
-        <DoorOpenSpeed>0.9</DoorOpenSpeed>
-        <MeleeWeapon_Cooldown>1.35</MeleeWeapon_Cooldown>
-      </statFactors>
-      <smeltable>true</smeltable>
-    </stuffProps>
-  </ThingDef>
+				<Beauty>0.5</Beauty>
+				<Flammability>0.0</Flammability>
+				<DoorOpenSpeed>0.75</DoorOpenSpeed>
+				<MeleeWeapon_Cooldown>1.35</MeleeWeapon_Cooldown>
+			</statFactors>
+			<smeltable>true</smeltable>
+		</stuffProps>
+	</ThingDef>
 
 
-  <ThingDef ParentName="ResourceBase">
-    <defName>JadeReinforced</defName>
-    <label>Reinforced jade</label>
-    <description>A hard, green stone. Because of its beauty and rarity, jade is often used for ornaments and decorations. It's hardness and density also makes it a good material for blunt weapons.</description>
-    <graphicData>
-      <texPath>Things/Item/Resource/Jade</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
+	<ThingDef ParentName="ResourceBase">
+		<defName>JadeReinforced</defName>
+		<label>Reinforced jade</label>
+		<description>A hard, green stone. Because of its beauty and rarity, jade is often used for ornaments and decorations. It's hardness and density also makes it a good material for blunt weapons.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Jade</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
 		<useHitPoints>false</useHitPoints>
-    <soundInteract>ChunkRock_Drop</soundInteract>
-    <soundDrop>ChunkRock_Drop</soundDrop>
-    <statBases>
-      <MarketValue>5</MarketValue>
-      <Mass>0.06</Mass>
-      <SharpDamageMultiplier>0.8</SharpDamageMultiplier>
-      <BluntDamageMultiplier>1.5</BluntDamageMultiplier>
-    </statBases>
-    <thingCategories>
-      <li>ResourcesRaw</li>
-    </thingCategories>
-    <stackLimit>500</stackLimit>
-    <smallVolume>true</smallVolume>
-    <deepCommonality>0.5</deepCommonality>
-    <stuffProps>
-      <categories>
-        <li>Stony</li>
-      </categories>
-      <commonality>0.05</commonality>
-      <color>(85,118,69)</color>
-      <constructEffect>ConstructMetal</constructEffect>
-      <soundImpactStuff>BulletImpactMetal</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
-      <statOffsets>
-        <Beauty>9</Beauty>
-      </statOffsets>
-      <statFactors>
-        <MaxHitPoints>5</MaxHitPoints>
-        <WorkToMake>14</WorkToMake>
+		<soundInteract>ChunkRock_Drop</soundInteract>
+		<soundDrop>ChunkRock_Drop</soundDrop>
+		<statBases>
+			<MarketValue>5</MarketValue>
+			<Mass>0.5</Mass>
+			<SharpDamageMultiplier>0.8</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1.5</BluntDamageMultiplier>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<deepCommonality>0.5</deepCommonality>
+		<stuffProps>
+			<categories>
+				<li>Stony</li>
+			</categories>
+			<commonality>0.05</commonality>
+			<color>(85,118,69)</color>
+			<constructEffect>ConstructMetal</constructEffect>
+			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+			<statOffsets>
+				<Beauty>6</Beauty>
+			</statOffsets>
+			<statFactors>
+				<MaxHitPoints>5</MaxHitPoints>
+				<WorkToMake>14</WorkToMake>
 				<WorkToBuild>50</WorkToBuild>
-				<Beauty>3</Beauty>
-        <Flammability>0.2</Flammability>
-        <MeleeWeapon_Cooldown>1.1</MeleeWeapon_Cooldown>
-      </statFactors>
-      <smeltable>false</smeltable>
-    </stuffProps>
-  </ThingDef>
-  
+				<Beauty>2.5</Beauty>
+				<Flammability>0.2</Flammability>
+				<MeleeWeapon_Cooldown>1.1</MeleeWeapon_Cooldown>
+			</statFactors>
+			<smeltable>false</smeltable>
+		</stuffProps>
+	</ThingDef>
+
 </Defs>
